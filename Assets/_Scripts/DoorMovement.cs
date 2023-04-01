@@ -16,7 +16,7 @@ public class DoorMovement : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, positionToMove.position, speed * Time.deltaTime);
 
-            if(Vector2.Distance(transform.position, positionToMove.position) <= 1)
+            if(Vector2.Distance(transform.position, positionToMove.position) <= 0.1f)
                 isOpeningClosening = false;
         }
     }
