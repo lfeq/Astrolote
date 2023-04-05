@@ -6,7 +6,9 @@ public class DoorMovement : MonoBehaviour
 {
     [SerializeField] private Transform closePosition;
     [SerializeField] private Transform openPosition;
-    [SerializeField] private float speed;
+    [SerializeField] private float openSpeed = 2f;
+    [SerializeField] private float closeSpeed = 4f;
+    private float speed;
     private bool isOpeningClosening = false;
     private Transform positionToMove;
 
@@ -25,11 +27,13 @@ public class DoorMovement : MonoBehaviour
     {
         isOpeningClosening = true;
         positionToMove = closePosition;
+        speed = closeSpeed;
     }
 
     public void OpenDoor()
     {
         isOpeningClosening = true;
         positionToMove = openPosition;
+        speed = openSpeed;
     }
 }
